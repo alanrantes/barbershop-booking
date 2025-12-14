@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Prime</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <img src="https://via.placeholder.com/120x40?text=LOGO" class="logo">
+  </nav>
+
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <a href="#home">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#agendamento">Agendamento</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Estilo começa pelo corte</h1>
+      <p>Barbearia moderna e profissional</p>
+      <a href="#agendamento" class="btn">Agendar horário</a>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="card" id="servicos">
+    <h2>Serviços</h2>
+
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Corte Masculino</h3>
+        <p>Corte moderno ou tradicional</p>
+        <span>R$ 35</span>
+      </div>
+
+      <div class="service-item">
+        <h3>Barba Completa</h3>
+        <p>Acabamento com navalha</p>
+        <span>R$ 30</span>
+      </div>
+
+      <div class="service-item">
+        <h3>Corte + Barba</h3>
+        <p>Pacote completo</p>
+        <span>R$ 55</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="card" id="galeria">
+    <h2>Nossos cortes</h2>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186" onclick="openImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1" onclick="openImage(this.src)">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" onclick="openImage(this.src)">
+    </div>
+  </section>
+
+  <!-- AGENDAMENTO -->
+  <section class="card" id="agendamento">
+    <h2>Agendar horário</h2>
+    <button class="btn" onclick="openBooking()">Agendar agora</button>
+  </section>
+
+  <!-- MODAL IMAGEM -->
+  <div class="image-modal" id="imageModal">
+    <span onclick="closeImage()">×</span>
+    <img id="modalImage">
+  </div>
+
+  <!-- MODAL AGENDAMENTO -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <h3>Agendamento</h3>
+
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="tel" id="telefone" placeholder="Telefone">
+      <input type="date" id="data">
+      <input type="time" id="hora">
+
+      <select id="servico">
+        <option>Corte Masculino</option>
+        <option>Barba Completa</option>
+        <option>Corte + Barba</option>
+      </select>
+
+      <button class="btn" onclick="confirmBooking()">Confirmar</button>
+      <button class="btn cancel" onclick="closeBooking()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
